@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"label": "npm: dev",
+			"detail": "esbuild src/main.ts --bundle --outfile=dist/app.js --platform=node --sourcemap=inline "
+		}
+	]
+}
