@@ -1,14 +1,16 @@
 
-// import { Axios } from 'axios';
-// import {ApiClient} from './request';
+import { MyRequest } from './req';
+import {ApiClient} from './request';
 
-import { t1 } from "./t1";
 
-// function main() {
-//   const axios = new Axios();
-//   // const api = new ApiClient(undefined, axios);
-// }
+async function main() {
+  const api = new ApiClient({}, MyRequest);
+  const rs = await api.default.getPortalWebconfig();
+  console.log(rs);
+}
+// npx openapi --useUnionTypes --name ApiClient -i .\yaml\portal.v1.json -o src\request\ -c axios
 
+main();
 
 /**
  * 1. 调用 codegen 库生成 core
@@ -18,4 +20,5 @@ import { t1 } from "./t1";
  * 3. 读入 yaml，转换为document，转换并导出 json schema
  */
 
-t1();
+// import { outSchema } from "./t1";
+// outSchema();
