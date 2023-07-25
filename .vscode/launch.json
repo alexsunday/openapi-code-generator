@@ -7,10 +7,17 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "debug",
+      "name": "app entry",
       "cwd": "${workspaceFolder}",
       "program": "${workspaceFolder}/dist/app.js",
       "preLaunchTask": "npm: dev"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "jest",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/node_modules/jest/bin/jest.js"
     }
   ]
 }

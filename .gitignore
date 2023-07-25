@@ -3,3 +3,5 @@ src/request
 node_modules
 yaml/
 
+
+src/codegen/*.js

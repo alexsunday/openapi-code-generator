@@ -6,13 +6,14 @@ import {ApiClient} from './request';
 async function main() {
   const api = new ApiClient({}, MyRequest);
   const rs = await api.default.getPortalWebconfig();
-  console.log(rs);
+  console.log('finished!');
 }
 // npx openapi --useUnionTypes --name ApiClient -i .\yaml\portal.v1.json -o src\request\ -c axios
 
 main();
 
 /**
+ * 1. 配置解析 客户端类型fetch/axios/xhr，枚举，自定义clientName等
  * 1. 调用 codegen 库生成 core
  * 1. 可能还需要检测 nodejs 环境，必须>=18.x
  * 1. 检测yaml常见问题 如 重复 operationId

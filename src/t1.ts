@@ -3,7 +3,7 @@ import {openapiSchemaToJsonSchema as toJsonSchema} from '@openapi-contrib/openap
 import {OpenAPIV3} from 'openapi-types';
 import $RefParser from '@apidevtools/json-schema-ref-parser';
 import * as migrate from 'json-schema-migrate';
-import { sha1 } from './common';
+import { sha1 } from './codegen/common';
 
 function IsReference (obj: any): obj is OpenAPIV3.ReferenceObject {
   if (!!obj && obj.$ref !== null &&
