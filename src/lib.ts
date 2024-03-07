@@ -20,6 +20,7 @@ export type genOpt = {
   codeIndent: '4' | '2' | 'tab';
   clientName: string;
   client: clientType;
+  jsonDoc: string;
 }
 
 const defaultOpt: genOpt = {
@@ -28,6 +29,7 @@ const defaultOpt: genOpt = {
   codeIndent: '2',
   client: 'axios',
   clientName: 'api',
+  jsonDoc: 'api.doc.json',
 };
 
 /**
@@ -180,7 +182,7 @@ export async function fileCodeGen(input: string, outDir: string, opt: genOpt): P
   fixServiceImport(path.join(dstOutDir, 'services'));
 
   const jsonDocContent = JSON.stringify(doc, null, 2);
-  const jsonDocPath = path.resolve(dstOutDir, 'api.json');
+  const jsonDocPath = path.resolve(dstOutDir, opt.jsonDoc || 'api.doc.json');
   fs.writeFileSync(jsonDocPath, jsonDocContent, { encoding: 'utf-8' });
   return true;
 }

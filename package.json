@@ -1,18 +1,23 @@
 {
-  "name": "codegen",
-  "version": "1.0.0",
+  "name": "openapi-code-generator",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
+  "files": [
+    "dist/app.js"
+  ],
+  "bin": "dist/app.js",
   "scripts": {
     "test": "jest",
     "dev": "esbuild src/codegen/app.ts --bundle --outfile=dist/app.js --platform=node --sourcemap=inline ",
-    "pack-lib": "esbuild src/codegen/lib.ts --bundle --format=cjs --platform=node --minify --outfile=dist/lib.js"
+    "build": "node build.js",
+    "publish": "yarn build && npm publish --registry https://registry.npmjs.org/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@alexsunday/json-schema-ref-parser": "file:../json-schema-ref-parser/alexsunday-json-schema-ref-parser-0.0.0-dev.tgz",
+    "@alexsunday/json-schema-ref-parser": "file:../my-npm/alexsunday-json-schema-ref-parser-0.0.0-dev.tgz",
     "@apidevtools/swagger-parser": "^10.1.0",
     "@jest/globals": "^29.5.0",
     "@openapi-contrib/openapi-schema-to-json-schema": "^4.0.4",

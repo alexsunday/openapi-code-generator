@@ -51,8 +51,9 @@ function main() {
       useOptions: true,
       useUnionTypes: true,
       codeIndent: '2',
-      client: 'axios',
+      client: 'fetch',
       clientName: 'api',
+      jsonDoc: 'api.doc.json',
     }
   });
   if(!argv.inputDir || !argv.outputDir) {
@@ -81,6 +82,7 @@ function main() {
     codeIndent: argv.codeIndent,
     client: argv.client,
     clientName: argv.clientName,
+    jsonDoc: argv.jsonDoc,
   }
 
   tscodegenForDir(inDir, outDir, opt);
